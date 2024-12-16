@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Button Hover Effects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            position: relative;
+            padding: 10px 30px;
+            font-size: 1rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: skewX(-30deg);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #007bff;
+            border: 2px solid #007bff;
+            overflow: hidden;
+        }
+
+        .btn-outline::before {
+            background: #007bff;
+        }
+
+        .btn-outline:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="btn">Hover Me</button>
+        <button class="btn btn-outline">Outline Hover</button>
+    </div>
+</body>
+</html>
